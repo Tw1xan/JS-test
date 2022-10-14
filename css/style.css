@@ -157,13 +157,37 @@ body {
   font-size: 30px;
   margin: 0 0 20px 0;
 }
+
+.menu__arrow {
+  display: none;
+}
+
 /* js class start */
 
 body._pc .menu__list > li:hover .menu__sub-list {
-  opacity: 2;
+  opacity: 1;
   visibility: visible;
   transform: translate(0px, 0px);
   pointer-events: all;
+}
+
+body._touch .menu__arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  transition: transform 0.3s ease 0s;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #fff;
+}
+
+body._touch .menu__list > li {
+  display: flex;
+  align-items: center;
+}
+
+body._touch .menu__link {
+  flex: 1 1 auto;
 }
 
 /* js class end */
